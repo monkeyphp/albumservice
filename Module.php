@@ -1,6 +1,6 @@
 <?php
 /**
- * Modue.php
+ * Module.php
  *
  * LICENSE: Copyright David White [monkeyphp] <git@monkeyphp.com> http://www.monkeyphp.com/
  *
@@ -165,24 +165,18 @@ class Module
             // if the route is the one that we are interested in then we'll do
             // our processing - else we'll ignore
             if ($event->getRouteMatch()->getMatchedRouteName() == 'service') {
-
                 // event should contain a Response object
                 $response = $event->getResponse();
-
                 // event should contain a Request object
                 $request = $event->getRequest();
-
                 // event should contain a Request object so we'll use that to get
                 // the current Uri
                 $uri = $request->getUri();
-
                 // SOAP locations are picky! We need to build out WSDL uri based on
                 // the supplied uri - this can be a head f**k if its wrong
                 $wsdl = sprintf('%s://%s%s', $uri->getScheme(), $uri->getHost(), $uri->getPath());
-
                 // retrieve an instance of our Service class (the class that will handle the actual SOAP request)
                 $service = $event->getApplication()->getServiceManager()->get('AlbumService\Service\AlbumService');
-
                 // when a request is made to the route 'service' we need to check
                 // if a request is being made for the Wsdl or an actual call is being made
                 // to the SOAP service itself
@@ -209,7 +203,7 @@ class Module
                 } else {
                     // we will assume that a call is being made to the SOAP service itself
                     // create a Server instance supplying the WSDL location and
-                    // a classmap so it can convert XSD types to PHP classes
+                    // a classmap so it can convert XSD types to PHP classes and back
                     $server = new Server($wsdl . '?wsdl', array('classmap' => array(
                         'Album' => 'AlbumService\Model\Album'
                     )));

@@ -93,6 +93,25 @@ class AlbumService
     }
 
     /**
+     * Return an Album based on the supplied id parameter
+     * 
+     * @param int $id The Id of the Album to return
+     *
+     * @access public
+     * @throws \Exception
+     * @return AlbumService\Model\Album
+     */
+    public function findAlbum($id)
+    {
+        // attempt to locate the requested Album, if we cannot locate, then
+        // throw an Exception
+        if (null == ($album = $this->albumTable->getAlbum($id))) {
+            throw new \Exception('We could not find the requested Album');
+        }
+        return $album;
+    }
+
+    /**
      * Purchase an Album by supplying the id of the Album
      *
      * @param string $albumId The id of the Album
@@ -107,7 +126,7 @@ class AlbumService
         // attempt to locate the Album based on the supplied id paramter
         // if we cannot locate the Album throw an Exception
         if (null == ($album = $this->albumTable->getAlbum($albumId))) {
-            throw new \Exception('We did not recognise the supplied Album id');
+            throw new \Exception('We could not find the requested Album');
         }
 
         // if we retrieve the Album, we need to check its stock level
