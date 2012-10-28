@@ -53,11 +53,11 @@ use Zend\Soap\Wsdl\ComplexTypeStrategy\ArrayOfTypeComplex;
  * (ask Evan how great Modules are {@link http://www.flickr.com/photos/86569608@N00/8066213497})
  * but I hope that it gives an example of how to use SOAP in ZF2.
  *
- * If you have any questions or pointers, (you can get my on the usual channels)
+ * If you have any questions or pointers, (you can get me on the usual channels)
  * I'd be much appreciative.
  *
  * Regards MonkeyPHP
- * 
+ *
  * @category   AlbumService
  * @package    AlbumService
  * @subpackage Service
