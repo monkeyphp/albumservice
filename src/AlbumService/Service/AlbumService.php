@@ -87,7 +87,7 @@ class AlbumService
             $albums[] = $album;
         }
         // return the container of Albums
-        return $album;
+        return $albums;
     }
 
     /**
@@ -115,7 +115,7 @@ class AlbumService
         }
 
         // we have the Album in stock, so lets reduce its inventory by 1
-        $album->inventory--;
+        $album->quantity--;
 
         // now lets save the Album
         try {
