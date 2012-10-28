@@ -85,7 +85,7 @@ class AlbumService
         $albums = array();
         // loop through all of the available Albums from the database and
         // add them to the container
-        foreach ($this->albumTable->fetchAlbums() as $album) {
+        foreach ($this->albumTable->fetchAll() as $album) {
             $albums[] = $album;
         }
         // return the container of Albums
