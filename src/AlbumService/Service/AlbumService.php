@@ -17,6 +17,8 @@
  * @created    28-Oct-2012 11:21:44
  */
 namespace AlbumService\Service;
+// use AlbumService
+use AlbumService\Model\AlbumTable;
 /**
  * AlbumService
  *

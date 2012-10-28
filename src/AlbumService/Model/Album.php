@@ -70,4 +70,12 @@ class Album
      */
     public $quantity;
 
+    public function exchangeArray($data)
+    {
+        $this->id     = (isset($data['id']))     ? $data['id']     : null;
+        $this->artist = (isset($data['artist'])) ? $data['artist'] : null;
+        $this->title  = (isset($data['title']))  ? $data['title']  : null;
+        $this->quantity = (isset($data['quantity'])) ? $data['quantity'] : 0;
+    }
+
 }

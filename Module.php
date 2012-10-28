@@ -22,6 +22,8 @@ use AlbumService\Model\Album;
 use AlbumService\Model\AlbumTable;
 // use Zend
 use Zend\Mvc\MvcEvent;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\TableGateway\TableGateway;
 use Zend\Soap\AutoDiscover;
 use Zend\Soap\Server;
 use Zend\Soap\Wsdl\ComplexTypeStrategy\ArrayOfTypeComplex;
